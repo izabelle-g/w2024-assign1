@@ -43,9 +43,7 @@ const handleCircuit = (app) => {
         .eq('circuitRef', req.params.ref);
 
         // If reference found, send data, else display error msg
-        if(data.length > 0) {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No circuit found in ${req.params.ref}`));
     });
 };
@@ -60,9 +58,7 @@ const handleAllCircuitsInSeason = (app) => {
         .order('round', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data !== '') {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No circuits found in the year ${req.params.year}`));
     });
 };
@@ -88,9 +84,7 @@ const handleConstructor = (app) => {
         .eq('constructorRef', req.params.ref);
 
         // If reference found, send data, else display error msg
-        if(data.length > 0) {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No constructor found using ${req.params.ref}`));
     });
 };
@@ -116,7 +110,7 @@ const handleDriver = (app) => {
         .eq('driverRef', req.params.ref);
 
         // If reference found, send data, else display error msg
-        if(data.length > 0) res.send(data);
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No driver found with using ${req.params.ref}`));
     });
 };
@@ -131,9 +125,7 @@ const handleDriversWithPrefix = (app) => {
         .order('surname', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data.length > 0) {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data); 
         else res.json(jsonMSG(`No drivers found with prefix ${req.params.substring}`));
     });
 };
@@ -147,9 +139,7 @@ const handleDriversInRace = (app) => {
         .eq('races.raceId', req.params.raceId);
 
         // If reference found, send data, else display error msg
-        if(data !== '') {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`${req.params.raceId} is an invalid race ID`));
     });
 };
@@ -163,9 +153,7 @@ const handleRace = (app) => {
         .eq('raceId', req.params.raceId);
 
         // If reference found, send data, else display error msg
-        if(data !== '') {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`${req.params.raceId} is an invalid race ID`));
     });
 };
@@ -180,9 +168,7 @@ const handleRacesInSeason = (app) => {
         .order('round', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data != '') {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No races found in the season of ${req.params.year}`));
     });
 };
@@ -197,12 +183,8 @@ const handleNthRaceInSeason = (app) => {
         .eq('round', req.params.round);
 
         // If reference found, send data, else display error msg
-        if(req.params.year > 2024 || req.params.year < 1950){
-            res.json(jsonMSG(`Year ${req.params.year} is out of range`));
-        }
-        else if(data != '') {
-            res.send(data);
-        } 
+        if(req.params.year > 2024 || req.params.year < 1950) res.json(jsonMSG(`Year ${req.params.year} is out of range`));
+        else if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No race found in round ${req.params.round} in ${req.params.year} season`));
     }); 
 };
@@ -217,9 +199,7 @@ const handleRacesInCircuit = (app) => {
         .order('year', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data != '') {
-            res.send(data);
-        } 
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No races found in circuit ${req.params.ref}`));
     });
 };
@@ -237,7 +217,7 @@ const handleRacesInCircuitBetween = (app) => {
 
         // If reference found, send data, else display error msg
         if(req.params.end < req.params.start) res.json(jsonMSG(`The years are reversed`));
-        else if(data != '') res.send(data);
+        else if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No races found in circuit ${req.params.ref} between ${req.params.start} and ${req.params.end}`));
     });
 };
@@ -252,7 +232,7 @@ const handleResultsforRace = (app) => {
         .order('grid', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data != '') res.send(data);
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No results found for race with ID ${req.params.raceId}`));
     });
 };
@@ -266,7 +246,7 @@ const handleDriverResults = (app) => {
         .eq('drivers.driverRef', req.params.ref);
 
         // If reference found, send data, else display error msg
-        if(data != '') res.send(data);
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No results found for driver with reference ${req.params.ref}`));
     });
 };
@@ -283,7 +263,7 @@ const handleDriverResultsBetween = (app) => {
 
         // If reference found, send data, else display error msg
         if(req.params.end < req.params.start) res.json(jsonMSG(`The years are reversed`));
-        else if(data != '') {res.send(data); console.log(data);}
+        else if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No results found for driver with reference ${req.params.ref} between years ${req.params.start} and ${req.params.end}`));
     });
 };
@@ -298,7 +278,7 @@ const handleRaceQualResults = (app) => {
         .order('position', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data != '') res.send(data);
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No results found for race with ID ${req.params.raceId}`));
     });
 };
@@ -313,7 +293,7 @@ const handleSeasonStandings = (app) => {
         .order('position', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data != '') res.send(data);
+        if(data !== '' && data !== null) res.send(data);
         else res.json(jsonMSG(`No results found for race with ID ${req.params.raceId}`));
     });
 };
