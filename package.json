@@ -2,5 +2,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
     "express": "^4.18.2"
+  },
+  "scripts": { 
+    "start": "node f1-server.js" 
   }
 }
