@@ -46,7 +46,7 @@ const handleCircuit = (app) => {
         if(data.length > 0) {
             res.send(data);
         } 
-        else res.json(jsonMSG(`No circuit found with using ${req.params.ref}`));
+        else res.json(jsonMSG(`No circuit found in ${req.params.ref}`));
     });
 };
 
@@ -116,9 +116,7 @@ const handleDriver = (app) => {
         .eq('driverRef', req.params.ref);
 
         // If reference found, send data, else display error msg
-        if(data.length > 0) {
-            res.send(data);
-        } 
+        if(data.length > 0) res.send(data);
         else res.json(jsonMSG(`No driver found with using ${req.params.ref}`));
     });
 };
@@ -315,7 +313,8 @@ const handleSeasonStandings = (app) => {
         .order('position', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data != '') res.send(data);
+        if(!Number.isInteger(req.params.raceId)) res.json(jsonMSG(`Invalid input for RaceID`));
+        else if(data != '') res.send(data);
         else res.json(jsonMSG(`No results found for race with ID ${req.params.raceId}`));
     });
 };
@@ -330,7 +329,8 @@ const handleConstructorStandings = (app) => {
         .order('position', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(data != '') res.send(data);
+        if(!Number.isInteger(req.params.raceId)) res.json(jsonMSG(`Invalid input for RaceID`));
+        else if(data != '') res.send(data);
         else res.json(jsonMSG(`No results found for race with ID ${req.params.raceId}`));
     });
 };
