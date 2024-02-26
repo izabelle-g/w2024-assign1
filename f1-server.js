@@ -5,6 +5,27 @@ const app = express();
 // API Functionality by using the module f1-router.js
 const router = require('./scripts/f1-router.js');
 // TODO: Add the handlers here for the APIs
+router.handleAllSeasons(app);
+router.handleAllCircuits(app);
+router.handleCircuit(app);
+router.handleAllCircuitsInSeason(app);
+router.handleAllConstructors(app);
+router.handleConstructor(app);
+router.handleAllDrivers(app);
+router.handleDriver(app);
+router.handleDriversWithPrefix(app);
+router.handleDriversInRace(app);
+router.handleRace(app);
+router.handleRacesInSeason(app);
+router.handleNthRaceInSeason(app);
+router.handleRacesInCircuit(app);
+router.handleRacesInCircuitBetween(app);
+router.handleResultsforRace(app);
+router.handleDriverResults(app);
+router.handleDriverResultsBetween(app);
+router.handleRaceQualResults(app);
+router.handleSeasonStandings(app);
+router.handleConstructorStandings(app);
 
 // TODO: Might change when hosting
 // configure port to listen 
