@@ -27,6 +27,7 @@ router.handleSeasonStandings(app);
 router.handleConstructorStandings(app);
 
 // configure port to listen 
-app.listen(10000, () => {
-    console.log("Listening on port " + process.env.PORT);
+let port = 10000;
+app.listen(port, () => {
+    console.log("Listening on port " + port);
 });
