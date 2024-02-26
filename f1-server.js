@@ -4,7 +4,6 @@ const app = express();
 
 // API Functionality by using the module f1-router.js
 const router = require('./scripts/f1-router.js');
-// TODO: Add the handlers here for the APIs
 router.handleAllSeasons(app);
 router.handleAllCircuits(app);
 router.handleCircuit(app);
@@ -27,8 +26,7 @@ router.handleRaceQualResults(app);
 router.handleSeasonStandings(app);
 router.handleConstructorStandings(app);
 
-// TODO: Might change when hosting
 // configure port to listen 
-app.listen(process.env.PORT, () => {
+app.listen(8080, () => {
     console.log("Listening on port " + process.env.PORT);
 });

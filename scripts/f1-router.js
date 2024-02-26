@@ -1,7 +1,7 @@
 // Establish connection to supabase
 const supa = require('@supabase/supabase-js');
-const url = process.env.URL;
-const anonKey = process.env.API_KEY;
+const url = 'https://nkfxjestaclehojtwodt.supabase.co';
+const anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rZnhqZXN0YWNsZWhvanR3b2R0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDg5MTIwODgsImV4cCI6MjAyNDQ4ODA4OH0.8CTvQgX6aYoo8EF8rHvNwBh-kiMkB6QloowfVrH7DKs';
 
 const supabase = supa.createClient(url, anonKey);
 
