@@ -3,7 +3,7 @@
 
 **Edited By:** Izabelle Guevarra
 
-**Example API Requests**
+**Example API Requests** </br>
 [All Seasons](https://w2024-assign1-8plk.onrender.com/api/seasons) </br>
 [All Circuits](https://w2024-assign1-8plk.onrender.com/api/circuits) </br>
 [Monza Circuit](https://w2024-assign1-8plk.onrender.com/api/circuits/monza) </br>
