@@ -15,7 +15,7 @@
 [Driver: norris](https://w2024-assign1-8plk.onrender.com/api/drivers/norris)</br>
 [Driver: connolly](https://w2024-assign1-8plk.onrender.com/api/drivers/connolly)</br>
 [Search: sch](https://w2024-assign1-8plk.onrender.com/api/drivers/search/sch)</br>
-[Search: xxxxx](https://w2024-assign1-8plk.onrender.com/api/search/xxxxx)</br>
+[Search: xxxxx](https://w2024-assign1-8plk.onrender.com/api/drivers/search/xxxxx)</br>
 [All Drivers in RaceID 1069](https://w2024-assign1-8plk.onrender.com/api/drivers/race/1069)</br>
 [All Races with RaceID 1034](https://w2024-assign1-8plk.onrender.com/api/races/1034)</br>
 [All Races in 2021 Season](https://w2024-assign1-8plk.onrender.com/api/races/season/2021)</br>
