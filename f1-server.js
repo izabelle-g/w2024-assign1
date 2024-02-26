@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // API Functionality by using the module f1-router.js
-const router = require('scripts/f1-router.js');
+const router = require('./scripts/f1-router.js');
 router.handleAllSeasons(app);
 router.handleAllCircuits(app);
 router.handleCircuit(app);
@@ -29,5 +29,5 @@ router.handleConstructorStandings(app);
 // configure port to listen 
 let port = 10000;
 app.listen(port, () => {
-    console.log("Listening on port: " + port);
+    console.log("Listening on port " + port);
 });
