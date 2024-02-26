@@ -313,8 +313,7 @@ const handleSeasonStandings = (app) => {
         .order('position', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(!Number.isInteger(req.params.raceId)) res.json(jsonMSG(`Invalid input for RaceID`));
-        else if(data != '') res.send(data);
+        if(data != '') res.send(data);
         else res.json(jsonMSG(`No results found for race with ID ${req.params.raceId}`));
     });
 };
@@ -329,8 +328,7 @@ const handleConstructorStandings = (app) => {
         .order('position', { ascending: true });
 
         // If reference found, send data, else display error msg
-        if(!Number.isInteger(req.params.raceId)) res.json(jsonMSG(`Invalid input for RaceID`));
-        else if(data != '') res.send(data);
+        if(data !== '') res.send(data);
         else res.json(jsonMSG(`No results found for race with ID ${req.params.raceId}`));
     });
 };
